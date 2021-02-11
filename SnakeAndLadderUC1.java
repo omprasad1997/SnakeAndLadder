@@ -21,14 +21,18 @@ public class SnakeAndLadderUC1 {
                     case no_play :
                         break;
                     case ladder:
-                        pos_of_player = pos_of_player + no_on_die;
+                        if(pos_of_player + no_on_die > 100)
+                            break;
+                        else
+                            pos_of_player = pos_of_player + no_on_die;
+
                         break;
                     case snake:
                         pos_of_player = pos_of_player - no_on_die;
                         break; 
                 }
             }
-        }
+        } 
 	}
 }
 
