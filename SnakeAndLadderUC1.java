@@ -21,7 +21,7 @@ public class SnakeAndLadderUC1 {
 	            pos_of_player_2 = 0;
 	        else
 	        {
-	            int no_on_die = 1+(int)Math.floor(Math.random()*10)%6; 
+	            int no_on_dice = 1+(int)Math.floor(Math.random()*10)%6; 
 	  
 	            int options = (int)Math.floor(Math.random()*10)%3;
 	            switch(options)
@@ -40,10 +40,10 @@ public class SnakeAndLadderUC1 {
 	                    //     pos_of_player = pos_of_player + no_on_die;
 	                    if(player1)
 	                    {
-	                    	int p1 = (pos_of_player_1 + no_on_die);
-	                    	if((pos_of_player_1 + no_on_die) < 100)
+	                    	int p1 = (pos_of_player_1 + no_on_dice);
+	                    	if((pos_of_player_1 + no_on_dice) < 100)
 	                    	{
-	                    		pos_of_player_1 = pos_of_player_1 + no_on_die;
+	                    		pos_of_player_1 = pos_of_player_1 + no_on_dice;
 		                        player1 = true;
 		                        player2 = false;
 	                    	}else if( p1 == 100)
@@ -53,10 +53,10 @@ public class SnakeAndLadderUC1 {
 	                        
 	                    }else
 	                    {
-	                    	int p2 = (pos_of_player_2 + no_on_die);
+	                    	int p2 = (pos_of_player_2 + no_on_dice);
 	                    	if(p2 < 100)
 	                    	{
-	                    		pos_of_player_2 = pos_of_player_2 + no_on_die;
+	                    		pos_of_player_2 = pos_of_player_2 + no_on_dice;
 		                        player2 = true;
 		                        player1 = false;
 	                    	}else if( p2 == 100)
@@ -68,12 +68,12 @@ public class SnakeAndLadderUC1 {
 	                case snake:
 	                    if(player1)
 	                    {
-	                        pos_of_player_1 = pos_of_player_1 - no_on_die;
+	                        pos_of_player_1 = pos_of_player_1 - no_on_dice;
 	                        player1 = false;
 	                        player2 = true;
 	                    }else
 	                    {
-	                        pos_of_player_2 = pos_of_player_2 - no_on_die;
+	                        pos_of_player_2 = pos_of_player_2 - no_on_dice;
 	                        player2 = true;
 	                        player1 = false;
 	                    }
