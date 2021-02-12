@@ -1,18 +1,15 @@
 package com.blbz;
 
 public class SnakeAndLadderUC1 {
-	public static final int noPlay = 0;
+    public static final int noPlay = 0;
     public static final int ladder  = 1;
     public static final int snake   = 2;
     
 public static void main(String[] args) {
-    // write your code here
     int positionOfPlayer1=0;
     int positionOfPlayer2=0;
     boolean player1 = true;
     boolean player2  = false;
-
-    
 
     while(positionOfPlayer1!=100 && positionOfPlayer2!=100)
     {
@@ -32,7 +29,6 @@ public static void main(String[] args) {
                     player1 = (!player1);
                     player2 = (!player2);
                     break;
-
                 }
                 case ladder:
                     if(player1)
