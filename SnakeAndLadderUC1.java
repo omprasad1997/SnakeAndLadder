@@ -6,8 +6,8 @@ public class SnakeAndLadderUC1 {
     public static final int snake   = 2;
     
 public static void main(String[] args) {
-    // write your code here
-    int positionOfPlayer1=0;
+ 
+	int positionOfPlayer1=0;
     int positionOfPlayer2=0;
     boolean player1 = true;
     boolean player2  = false;
@@ -16,7 +16,7 @@ public static void main(String[] args) {
 
     while(positionOfPlayer1!=100 && positionOfPlayer2!=100)
     {
-        if(positionOfPlayer1< 0)
+        if(positionOfPlayer1 < 0)
             positionOfPlayer1 = 0;
         else if(positionOfPlayer2 < 0)
             positionOfPlayer2 = 0;
@@ -37,14 +37,29 @@ public static void main(String[] args) {
                 case ladder:
                     if(player1)
                     {
-                        positionOfPlayer1 = positionOfPlayer1 + numberOnDice;
-                        player1 = true;
-                        player2 = false;
+                    	int p1 = (positionOfPlayer1 + numberOnDice);
+                    	if((positionOfPlayer1 + numberOnDice) < 100)
+                    	{
+                    		positionOfPlayer1 = positionOfPlayer1 + numberOnDice;
+	                        player1 = true;
+	                        player2 = false;
+                    	}else if( p1 == 100)
+                    		positionOfPlayer1 = 100;
+                    	else
+                    		break;
+                        
                     }else
                     {
-                        positionOfPlayer2 = positionOfPlayer2 + numberOnDice;
-                        player2 = true;
-                        player1 = false;
+                    	int p2 = (positionOfPlayer2 + numberOnDice);
+                    	if(p2 < 100)
+                    	{
+                    		positionOfPlayer2 = positionOfPlayer2 + numberOnDice;
+	                        player2 = true;
+	                        player1 = false;
+                    	}else if( p2 == 100)
+                    		positionOfPlayer2 = 100;
+                    	else
+                    		break;
                     }
                     break;
                 case snake:
@@ -67,10 +82,9 @@ public static void main(String[] args) {
     System.out.println("Player 2:" + positionOfPlayer2);
     
     if(positionOfPlayer1 == 100)
-        System.out.println("Player 1 Won the game!!");
+        System.out.println("Player 1 Won the game");
     else    
-        System.out.println("Player 2 Won the game!!"); 
-     
+        System.out.println("Player 2 Won the game"); 
 }
 }
 
